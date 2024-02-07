@@ -4,7 +4,33 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
+ let numbersWithSquareRoots = [];
+ let allNumbersSquared = [];
+ let maxList = [];
+ // console.log("this is the max list ", maxList);
+ for(let i = 0; i <= max; i++) {
+     maxList.push(i);
+     let squared = Number(i*i);
+     if(squared < max) {
+         allNumbersSquared.push(squared);
+     }
+ }
+ // console.log("this is the max list filled", maxList);
+ // console.log("all squares: ", allNumbersSquared);
+ 
+ 
+for(let x = 0; x < allNumbersSquared.length; x++) {
+ // in all numbers squared, we need to find the maxNum
+ 
+ for (let maxNum of maxList) {
+   if(maxNum === allNumbersSquared[x] ) {
+     numbersWithSquareRoots.push(maxNum);
+     }
+   }
+ }
+ 
+ // console.log("numbers with square roots: ",numbersWithSquareRoots);
+ return numbersWithSquareRoots;
 }
 
 // === TEST YOURSELF ===
