@@ -5,7 +5,13 @@
 
 export function getClientWithNoMoney(array) {
   // Your code goes here...
-
+  let balanceZero = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].balance === 0) {
+      balanceZero.push(array[i].name);
+    }
+  }
+  return balanceZero;
 }
 
 // === TEST YOURSELF ===
