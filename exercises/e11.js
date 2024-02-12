@@ -6,7 +6,33 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
+let allWithdrawals = [];
+for(let i = 0; i < array.length; i++) {
+    if(!array[i].withdrawals) {
+        array[i].withdrawals = [0];
+    }
+}
 
+for(let x = 0; x < array.length; x++) {
+     let accountWithdrawal = array[x].withdrawals;
+    //  console.log("this is accountWithdrawal for: " + array[j].name + ": ", accountWithdrawal);
+     if(accountWithdrawal[0] > 0) {
+        let sum = 0;
+        for(let num of accountWithdrawal) {
+            sum+=num;
+        }
+        allWithdrawals.push(sum);
+        // console.log("this is the sum now for : "+ array[j].name+": ", sum);
+        // console.log("allWithdrawals now looks like this: ", allWithdrawals);
+    }else {
+        let sum = 0;
+        allWithdrawals.push(sum);
+        // console.log("allWithdrawals now looks like this: ", allWithdrawals);
+    }
+       
+}
+// console.log("this is the final result: ", allWithdrawals);
+return allWithdrawals;
 }
 
 // === TEST YOURSELF ===
