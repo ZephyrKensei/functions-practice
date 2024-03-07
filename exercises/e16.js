@@ -7,7 +7,16 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  let combined = [];
+  for(let i = 0; i < array.length; i++) {
+    let subArr = array[i];
+    for(let item of subArr) {
+        combined.push(item);
+    }
 
+  }
+  console.log("this is combined: ", combined);
+  return combined;
 }
 
 
